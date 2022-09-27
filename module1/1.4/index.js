@@ -1,4 +1,5 @@
 const divs = document.querySelectorAll('div');
+
 let colorIndex = 0;
 let reverse = false;
 
