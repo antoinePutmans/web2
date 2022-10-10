@@ -11,4 +11,13 @@ const renderPageTitle = (title) => {
   main.appendChild(pageTitle);
 };
 
-export { clearPage, renderPageTitle };
+const renderImage = (wrapper, url, id, height) => {
+  const image = new Image(); // or document.createElement('img');
+  image.src = url;
+  image.height = height;
+  if (id) image.id = id;
+  wrapper.appendChild(image);
+}
+
+
+export { clearPage, renderPageTitle, renderImage };
