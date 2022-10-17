@@ -1,6 +1,7 @@
 ### Read all pizzas with File variable
 @baseUrl = http://localhost:3000
-GET {{baseUrl}}/pizzas
+
+GET {{baseUrl}}/films
 
 ### Read all pizzas sorted by title (ascending)
 GET {{baseUrl}}/pizzas/?order=+title
@@ -9,12 +10,14 @@ GET {{baseUrl}}/pizzas/?order=+title
 GET {{baseUrl}}/pizzas/?order=-title
 
 ### Create a pizza
-POST {{baseUrl}}/pizzas
+POST {{baseUrl}}/films
 Content-Type: application/json
 
 {
-    "title":"Magic Green",
-    "content":"Epinards, Brocolis, Olives vertes, Basilic"
+    "title": "Ok",
+    "duration": 100,
+    "budget":"1000m",
+    "link": "OkOk"
 }
 ### Create a pizza which lacks a property
 POST {{baseUrl}}/pizzas
