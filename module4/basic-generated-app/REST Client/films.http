@@ -3,11 +3,7 @@
 
 GET {{baseUrl}}/films
 
-### Read all pizzas sorted by title (ascending)
-GET {{baseUrl}}/pizzas/?order=+title
 
-### Read all pizzas sorted by title (descending)
-GET {{baseUrl}}/pizzas/?order=-title
 
 ### Create a pizza
 POST {{baseUrl}}/films
@@ -19,23 +15,6 @@ Content-Type: application/json
     "budget":"1000m",
     "link": "OkOk"
 }
-### Create a pizza which lacks a property
-POST {{baseUrl}}/pizzas
-Content-Type: application/json
-
-{
-    "content":"Epinards, Brocolis, Olives vertes, Basilic"
-}
-
-### Update pizza id
-PATCH {{baseUrl}}/pizzas/1
-Content-Type: application/json
-
-{
-    "content":"PD, Brocolis, Olives vertes, Basilic"
-}
 
 
 
-### Delete pizza identified by 2
-DELETE {{baseUrl}}/pizzas/2

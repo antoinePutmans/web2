@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const fs = require('fs');
 
 const FILMS = [
   {
@@ -68,25 +68,8 @@ router.get('/:id', (req, res) => {
   res.json(FILMS[indexOfFilms]);
 });
 
-router.patch('/:id', (req, res) => {
 
-  const title = req?.body?.title;
-  const content = req?.body?.content;
 
-  console.log('POST /pizzas');
-
-  if ((!title && !content) || title?.length === 0 || content?.length === 0) return res.sendStatus(400);
-
-  const foundIndex = MENU.findIndex(pizza => pizza.id == req.params.id);
-
-  if (foundIndex < 0 || foundIndex>MENU.length-1) return res.sendStatus(404);
-
-  const updatedPizza = {...MENU[foundIndex], ...req.body};
-
-  MENU[foundIndex] = updatedPizza;
-
-  res.json(updatedPizza);
-});
 
 
 module.exports = router;
