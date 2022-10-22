@@ -1,0 +1,38 @@
+######### NORMAL OPERATION  ###########
+
+
+
+### Read all film with File variable
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/films
+
+### Read film identified by 2
+GET {{baseUrl}}/films/3
+
+### Create a film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title": "Ok Gump",
+    "duration": 142,
+    "budget": 55,
+    "link": "https://en.wikipedia.org/wiki/Forrest_Gump"
+}
+
+### Delete film identified by 2
+DELETE {{baseUrl}}/films/3
+
+### Update the film identified by 6
+PATCH {{baseUrl}}/films/1
+Content-Type: application/json
+
+{
+    "title": "Ok GAuAmp",
+    "duration": 142,
+    "budget": 55,
+    "link": "https://en.wikipedia.org/wiki/Forrest_Gump"
+}
+
+
+
