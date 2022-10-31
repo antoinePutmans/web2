@@ -20,25 +20,24 @@ import { clearPage } from '../../utils/render';
     },
   ];
   
-  const HomePage = () => {
-    clearPage();
-    
-    fetch('/api/pizzas')
-    .then((response) => {
+  const HomePage = async () => {
+    try {
+      clearPage();
+  
+      const response = await fetch('/api/pizzas');
+  
       if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
-      return response.json();
-    })
-    .then((pizzas) => {
+  
+      const pizzas = await response.json();
+  
       renderMenuFromString(pizzas);
       attachOnMouseEventsToGoGreen();
       renderDrinksFromNodes(DRINKS);
-    })
-    .catch((err) => {
+    } catch (err) {
       console.error('HomePage::error: ', err);
-    });
-  
-  
+    }
   };
+  
   
   function renderMenuFromString(menu) {
     const menuTableAsString = getMenuTableAsString(menu);
